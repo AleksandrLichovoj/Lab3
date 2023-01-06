@@ -1,0 +1,21 @@
+<h2>My Paintings</h2>
+
+<div>
+  <label for="new-painting">Painting name: </label>
+  <input id="new-painting" #paintingName />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button type="button" class="add-button" (click)="add(paintingName.value); paintingName.value=''">
+    Add painting
+  </button>
+</div>
+
+<ul class="paintings">
+  <li *ngFor="let painting of paintings">
+    <a routerLink="/detail/{{painting.id}}">
+      <span class="badge">{{painting.id}}</span> {{painting.name}}
+    </a>
+    <button type="button" class="delete" title="delete painting"
+      (click)="delete(painting)">x</button>
+  </li>
+</ul>

@@ -1,0 +1,12 @@
+<div id="search-component">
+  <label for="search-box">Painting Search</label>
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+
+  <ul class="search-result">
+    <li *ngFor="let painting of paintings$ | async" >
+      <a routerLink="/detail/{{painting.id}}">
+        {{painting.name}}
+      </a>
+    </li>
+  </ul>
+</div>

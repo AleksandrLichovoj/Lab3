@@ -1,0 +1,10 @@
+<div *ngIf="painting">
+  <h2>{{painting.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{painting.id}}</div>
+  <div>
+    <label for="painting-name">Painting name: </label>
+    <input id="painting-name" [(ngModel)]="painting.name" placeholder="Painting name"/>
+  </div>
+  <button type="button" (click)="goBack()">go back</button>
+  <button type="button" (click)="save()">save</button>
+</div>

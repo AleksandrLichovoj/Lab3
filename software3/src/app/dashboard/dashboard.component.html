@@ -1,0 +1,9 @@
+<h2>Top Paintings</h2>
+<div class="paintings-menu">
+  <a *ngFor="let painting of paintings"
+      routerLink="/detail/{{painting.id}}">
+      {{painting.name}}
+  </a>
+</div>
+
+<app-painting-search></app-painting-search>
